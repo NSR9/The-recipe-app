@@ -22,12 +22,12 @@ app.get('/recipeApp', (req, res) => {
   console.log('initial test of the app')
 })
 // require('./services/scada.js')
-app.use(express.static('../frontend/build'));
+app.use(express.static('./frontend/build'));
 
 var endpoints = require('./services/endpoints.js') // file name doesn't affect
 app.use('/api/v1', endpoints)
 app.use(function(req, res) {
-	res.sendFile(path.join(__dirname, ' ../frontend/build/index.html'));
+	res.sendFile(path.join(__dirname, './frontend/build/index.html'));
 });
 
 // var android = require('./services/android.js')
