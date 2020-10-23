@@ -22,7 +22,11 @@ app.get('/recipeApp', (req, res) => {
   console.log('initial test of the app')
 })
 // require('./services/scada.js')
-app.use(express.static('frontend/build'));
+
+process.env.PWD = process.cwd();
+app.use(express.static(process.env.PWD + '/frontend/build'));
+
+
 
 var endpoints = require('./services/endpoints.js') // file name doesn't affect
 app.use('/api/v1', endpoints)

@@ -227,6 +227,6 @@ router.route('/analyzedInstructions').get(async (req, res) => {
 });
 
 router.use(function(req, res) {
-	res.sendFile(path.join(__dirname, 'frontend/build/index.html'));
+	res.sendFile(path.join(process.env.PWD, 'frontend/build/index.html'));
 });
 module.exports = router
