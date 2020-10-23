@@ -28,7 +28,7 @@ app.get('/recipeApp', (req, res) => {
 
 
 app.get('/*',function(req, res) {
-	res.sendFile(frontend/build/index.html);
+	res.sendFile(/frontend/build/index.html);
 });
 
 
