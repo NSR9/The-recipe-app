@@ -28,7 +28,8 @@ app.get('/recipeApp', (req, res) => {
 
 
 app.get('/*',function(req, res) {
-	res.sendFile(pathToFileURL(/frontend/build/index.html));
+  const index =  '/frontend/build/index.html';
+	res.sendFile(index);
 });
 
 
