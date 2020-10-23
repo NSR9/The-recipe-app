@@ -226,4 +226,4 @@ router.route('/analyzedInstructions').get(async (req, res) => {
   res.send(instructions)
 });
 
-
+module.exports = router;
