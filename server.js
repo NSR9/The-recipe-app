@@ -24,10 +24,10 @@ app.get('/recipeApp', (req, res) => {
 // require('./services/scada.js')
 
 process.env.PWD = process.cwd();
-app.use(express.static(process.env.PWD + '/frontend/build'));
+app.use(express.static(process.env.PWD + '/build'));
 
 app.get('/',function(req, res) {
-	res.sendFile(path.join(process.env.PWD, 'frontend/build/index.html'));
+	res.sendFile(path.join(process.env.PWD, '/build/index.html'));
 });
 
 
