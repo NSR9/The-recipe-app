@@ -8,6 +8,7 @@ var cors = require('cors')
 // mongoose.connect('mongodb://localhost:27017/hellodb')
 
 app.use(cors())
+app.use(express.static(__dirname + '/dist/The-recipe-project/frontend/build'));
 // CORS Middleware
 app.use((req, res, next) => {
   // Enabling CORS
@@ -23,11 +24,11 @@ app.get('/recipeApp', (req, res) => {
 })
 // require('./services/scada.js')
 
-process.env.PWD = process.cwd();
-app.use(express.static(__dirname + '../frontend/build'));
 
-app.get('*',function(req, res) {
-	res.sendFile(path.join(__dirname,'../frontend/build','index.html'));
+
+
+app.get('/*',function(req, res) {
+	res.sendFile(path.join(__dirname,'/dist/The-recipe-project/frontend/build/index.html'));
 });
 
 
