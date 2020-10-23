@@ -226,7 +226,4 @@ router.route('/analyzedInstructions').get(async (req, res) => {
   res.send(instructions)
 });
 
-router.use('*',function(req, res) {
-	res.sendFile(path.join(process.env.PWD, 'frontend/build/index.html'));
-});
-module.exports = router
+

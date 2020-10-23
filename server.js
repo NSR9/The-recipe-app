@@ -26,7 +26,10 @@ app.get('/recipeApp', (req, res) => {
 process.env.PWD = process.cwd();
 app.use(express.static(process.env.PWD + '/frontend/build'));
 
-
+app.get('/',function(req, res) {
+	res.sendFile(path.join(process.env.PWD, 'frontend/build/index.html'));
+});
+module.exports = router
 
 var endpoints = require('./services/endpoints.js') // file name doesn't affect
 app.use('/api/v1', endpoints)
