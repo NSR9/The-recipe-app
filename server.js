@@ -28,11 +28,12 @@ app.get('/recipeApp', (req, res) => {
 
 
 app.get('/*',function(req, res) {
-	res.sendFile(/frontend/build/index.html);
+	res.sendFile(pathToFileURL(/frontend/build/index.html));
 });
 
 
-var endpoints = require('./services/endpoints.js') // file name doesn't affect
+var endpoints = require('./services/endpoints.js'); // file name doesn't affect
+const { pathToFileURL } = require('url');
 app.use('/api/v1', endpoints)
 // app.use(function(req, res) {
 // 	res.sendFile(path.join(__dirname, './frontend/build/index.html'));
